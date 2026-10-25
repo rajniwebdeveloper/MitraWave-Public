@@ -6,15 +6,15 @@
 
 **MitraWave** is a privacy-first messaging product being developed for Android, iOS, Web, Windows, Linux and macOS, with online chat and proximity-based encrypted mesh delivery as its intended capabilities.
 
-[**Download latest Android APK (v0.3.0-dev)**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.3.0-dev/MitraWave-Android-v0.3.0-dev.apk) · [**Other platform UI previews**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.2.0-preview) · [**All releases**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases)
+[**Download latest Android APK (v0.4.0-dev)**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.4.0-dev/MitraWave-Android-v0.4.0-dev.apk) · [**Other platform UI previews**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.2.0-preview) · [**All releases**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases)
 
-> **Important:** The currently available downloads are **UI previews, not functional encrypted messaging clients**. The Android v0.3.0-dev preview adds a branded launcher icon and password-encrypted **local signing-key plus recovery-note** backup/import feature, but does not recover actual chats. Real sign-in in the apps, end-to-end encrypted messages, voice/video calls, Bluetooth mesh forwarding and live chat are not operational in these preview packages. Do not use the previews for sensitive communication.
+> **Important:** The currently available downloads are **UI previews, not functional encrypted messaging clients**. The Android v0.4.0-dev preview includes the branded icon, password-encrypted **local signing-key plus recovery-note** backup/import, and a **manual HTTPS/TCP backend health check** in Settings, but does not recover actual chats. Real sign-in in the apps, end-to-end encrypted messages, voice/video calls, Bluetooth mesh forwarding and live chat are not operational in these preview packages. Do not use the previews for sensitive communication.
 
-## Downloads — Android v0.3.0-dev, other platforms v0.2.0-preview
+## Downloads — Android v0.4.0-dev, other platforms v0.2.0-preview
 
 | Platform | Public download | What it contains |
 | --- | --- | --- |
-| **Android (7.0+)** | [Download latest APK](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.3.0-dev/MitraWave-Android-v0.3.0-dev.apk) | Branded Android UI + encrypted identity/backup import-export, min API 24, target API 36 |
+| **Android (7.0+)** | [Download latest APK](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.4.0-dev/MitraWave-Android-v0.4.0-dev.apk) | Branded Android UI + encrypted identity backup/import + manual HTTPS Go-server diagnostics, min API 24, target API 36 |
 | **Windows x64** | [Download Windows ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Windows-Desktop-Preview-amd64.zip) | `.exe` desktop UI preview launcher |
 | **Linux x86-64** | [Download Linux tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-amd64.tar.gz) | Linux desktop UI preview executable |
 | **Linux ARM64** | [Download ARM64 tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-arm64.tar.gz) | ARM64 desktop UI preview executable |
@@ -25,15 +25,21 @@
 
 [**SHA-256 checksums for all downloads**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/SHA256SUMS.txt)
 
-The Windows, Linux and macOS desktop downloads run a local-only user interface in the default browser. They are *not* connected to the private Go backend. The current Android APK's internal version is `0.3.0-dev` (versionCode 3). The other downloadable previews are unchanged older builds.
+The Windows, Linux and macOS desktop downloads run a local-only user interface in the default browser. They are *not* connected to the private Go backend. The current Android APK's internal version is `0.4.0-dev` (versionCode 4). The other downloadable previews are unchanged older builds.
 
-## Android private-key import and local recovery (v0.3.0-dev)
+## Android private-key import and local recovery (v0.4.0-dev)
 
 The Android app now offers **Settings → Private key import / export**, with a password-encrypted `.mwbackup` that includes a local P-256 signing private key, its public key and a saved recovery note. The private key is encrypted locally using Android Keystore; the exported backup uses AES-256-GCM with a password-derived key. To import, select the saved `.mwbackup`, enter its password and confirm replacing the local identity.
 
 **This does not restore chat history.** The prototype has no working encrypted chat database; restoring a key alone cannot retrieve messages that were never backed up. Real-device restore testing and a security audit remain outstanding. The backup and password should be kept private.
 
 [View Android v0.3.0 release](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.3.0-dev) · [Download app icon](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.3.0-dev/MitraWave-App-Icon-512.png)
+
+## Go backend/TCP connection status
+
+MyServer82 runs a **Go HTTP + WebSocket gateway** at `127.0.0.1:18482`, with separate isolated Redis and PostgreSQL containers. Live integration tests have passed registration/login, key lookup, temporary ciphertext delivery, acknowledgement/deletion, and WebSocket upgrades. **This is an internal-only listener**, not a public mobile endpoint. The new Android Settings screen can test a user-provided HTTPS gateway address, but public domain/TLS routing and the actual chat client integration are not configured. The app is **not ready for public secure messaging**.
+
+[View verified transport integration test](https://github.com/rajniwebdeveloper/MitraWave/actions/runs/40185251965) (requires private repo access).
 
 ## Features
 
@@ -59,7 +65,7 @@ MitraWave's product design covers the following experiences. **Feature descripti
 
 ## Installation notes
 
-**Android:** Download the latest **v0.3.0-dev** APK and install using the system package installer. This is a development/debug-signed preview, not an official app-store release.
+**Android:** Download the latest **v0.4.0-dev** APK and install using the system package installer. This is a development/debug-signed preview, not an official app-store release.
 
 **Windows:** Extract the ZIP, then open `MitraWave-Desktop-Preview.exe`. It launches a UI preview in your default browser.
 
