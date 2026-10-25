@@ -4,95 +4,52 @@
 
 ### Stay Connected, Even Offline.
 
-**MitraWave** is a privacy-first messaging product being developed for Android, iOS, Web, Windows, Linux and macOS, with online chat and proximity-based encrypted mesh delivery as its intended capabilities.
+**MitraWave** is an experimental device-owned identity messenger. Android has a preliminary HTTPS/WSS encrypted message client; Windows, Linux, macOS, Web and iOS Simulator releases currently provide UI previews.
 
-[**Download latest Android APK (v0.6.0-dev)**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.6.0-dev/MitraWave-Android-v0.6.0-dev.apk) · [**Other platform UI previews**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.2.0-preview) · [**All releases**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases)
+[**Download latest Android APK — v0.7.0-dev**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.7.0-dev/MitraWave-Android-v0.7.0-dev.apk) · [**View latest release**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.7.0-dev) · [**All releases**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases)
 
-> **Important:** Most available downloads are **UI previews**. Android v0.6 includes experimental encrypted-message code but has not passed a real two-device E2EE test. The Android v0.6.0-dev preview includes branded icons, local encrypted identity backup/import, **device-key signed registration/reconnect (no server passwords)**, **self-service deletion**, and experimental encrypted send/receive over public HTTPS/WSS. These functions have not been validated in a real two-device chat test. This is NOT an audited Signal/Double-Ratchet implementation; there is no persistent chat-history backup, nearby mesh, or calls. Other platforms remain UI previews. **Do not use these experimental builds for sensitive conversations.**
+> **Developer preview — NOT a production-audited E2EE messenger.** No verified two-device interoperability test or Signal/Double-Ratchet protocol, no persistent encrypted chat history, no Bluetooth/Wi-Fi offline mesh, and no working calls. Do not send sensitive conversations.
 
-## Downloads — Android v0.6.0-dev, other platforms v0.2.0-preview
+## Downloads
 
-| Platform | Public download | What it contains |
+| Platform | Download | Scope |
 | --- | --- | --- |
-| **Android (7.0+)** | [Download latest APK](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.6.0-dev/MitraWave-Android-v0.6.0-dev.apk) | Android device-owned identity, signed self-deletion, experimental HTTPS/WSS encrypted 1:1 messaging, backup/import, min API 24, target API 36 |
-| **Windows x64** | [Download Windows ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Windows-Desktop-Preview-amd64.zip) | `.exe` desktop UI preview launcher |
-| **Linux x86-64** | [Download Linux tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-amd64.tar.gz) | Linux desktop UI preview executable |
-| **Linux ARM64** | [Download ARM64 tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-arm64.tar.gz) | ARM64 desktop UI preview executable |
-| **Linux ISO** | [Download ISO](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-DATA-ONLY.iso) | **Data ISO only; NOT bootable, NOT a Linux OS or installer** |
-| **macOS Apple Silicon** | [Download macOS tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-macOS-Desktop-Preview-arm64.tar.gz) | Unsigned local desktop UI preview launcher |
-| **Web** | [Download Web ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Web-UI-Preview.zip) | Static HTML + compiled Kotlin/JS browser preview |
-| **iOS Simulator** | [Download Simulator ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-iOS-Simulator-UI-Preview.zip) | Unsigned **simulator-only** application, not an iPhone IPA |
+| **Android 7.0+** | [APK v0.7.0-dev](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.7.0-dev/MitraWave-Android-v0.7.0-dev.apk) | Device-owned signed login, **PostgreSQL username search**, temporary WSS encrypted-message relay, in-app self-delete |
+| **Windows x64** | [ZIP with EXE](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Windows-Desktop-Preview-amd64.zip) | Local browser UI preview |
+| **Linux x86-64** | [tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-amd64.tar.gz) | Local browser UI preview |
+| **Linux ARM64** | [tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-arm64.tar.gz) | Local browser UI preview |
+| **Linux ISO** | [ISO](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-DATA-ONLY.iso) | **Data-only image, not bootable or an installer** |
+| **macOS Apple Silicon** | [tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-macOS-Desktop-Preview-arm64.tar.gz) | Unsigned UI preview |
+| **Web** | [ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Web-UI-Preview.zip) | Static browser UI preview |
+| **iOS Simulator** | [ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-iOS-Simulator-UI-Preview.zip) | Unsigned simulator app, **not an iPhone IPA** |
 
-[**SHA-256 checksums for all downloads**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/SHA256SUMS.txt)
+Latest Android: package `com.mitrawave.app`, versionCode `7`, versionName `0.7.0-dev`, minSdk 24, targetSdk 36. SHA-256 APK: `c1bfeabd9d9786deac5f6e1d372e4c90d3e2582e296e975eae16c0d5f242dbb3`.
 
-The Windows, Linux and macOS desktop downloads run a local-only user interface in the default browser. They are *not* connected to the private Go backend. The current Android APK's internal version is `0.5.0-dev` (versionCode 6). The other downloadable previews are unchanged older builds. **Android v0.6 is not ready for general public-secure messaging.**
+## Device-owned account + PostgreSQL user search
 
-## Android private-key import and local recovery (v0.6.0-dev)
+- **Private identity stays on your phone.** Android creates the signing key locally and protects it with Android Keystore. Username registration and reconnect authenticate via short-lived cryptographic challenges, without a server-side password or OTP.
+- **PostgreSQL 17 directory:** stable `@username` and public primary-device key records, searchable by username prefix in the Android Chats screen. Usernames survive Redis restarts and stay registered until signed account deletion. PostgreSQL stores **no private keys, passwords, chat messages or media**.
+- **Device metadata:** the directory records the enrolled primary device ID and public key. Actual multi-device linking and secure approval of second devices are **not yet implemented**.
+- **Redis:** temporary ciphertext messages (maximum 24-hour TTL), sessions, rate limiting and WSS notifications. Its disk persistence is disabled; queued messages can be lost during restart.
+- **Account self-deletion:** Confirm **Delete my account** in Android Chats or Settings to delete PostgreSQL username and public device key, revoke Redis session/inbox entries, and erase the local private identity. **Offline local erase** cannot delete the PostgreSQL identity remotely.
+- **Recovery:** Export a password-encrypted `.mwbackup` in Settings. It includes your local identity, username and optional recovery note, **not chat history**. Exported backups stored elsewhere and messages already received by other users are not deleted automatically.
 
-The Android app now offers **Settings → Private key import / export**, with a password-encrypted `.mwbackup` that includes a local P-256 signing private key, its public key and a saved recovery note. The private key is encrypted locally using Android Keystore; the exported backup uses AES-256-GCM with a password-derived key. To import, select the saved `.mwbackup`, enter its password and confirm replacing the local identity.
+## Live Go backend
 
-**This does not restore chat history.** The prototype has no working encrypted chat database; restoring a key alone cannot retrieve messages that were never backed up. Real-device restore testing and a security audit remain outstanding. The backup and password should be kept private.
-
-[View Android v0.3.0 release](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.3.0-dev) · [Download app icon](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.3.0-dev/MitraWave-App-Icon-512.png)
-
-## Device-owned account and self-service deletion
-
-MitraWave v0.6 no longer stores permanent usernames, email addresses, or password hashes in PostgreSQL. Android creates the signing identity and authenticates using a short-lived signed challenge. The server uses **Redis RAM only** (Docker tmpfs, AOF and RDB saving disabled): username + public key up to **30 days**, encrypted delivery envelopes up to **24 hours**, sessions up to **24 hours**. A Redis restart clears the temporary directory early, so usernames are **not permanent**.
-
-**Delete my account:** In Android **Chats** or **Settings**, choose **Delete online identity + local data** to confirm a signed deletion that revokes the cached username, sessions and undelivered inbox, then erases the local Android key. **Erase only this device (offline)** clears device keys without connecting; server cache remains until expiration. Existing encrypted backup files outside the app and messages already delivered to other users are not deleted. There is no central account-recovery service. The encrypted backup does NOT restore chat history.
-
-Google Play also requires a separate web deletion-request resource when an app offers account registration; this feature has not yet been supplied. This is a **developer preview, not a production-ready Play Store release**.
-
-## Go backend/TCP connection status
-
-MyServer82 runs a **Go HTTP + WebSocket gateway** on internal-only TCP `127.0.0.1:18482`, with memory-only Redis privately isolated and no PostgreSQL account service. The gateway is now reachable through **[public HTTPS](https://trade.apihubs.in/mitrawave/healthz)** at `https://trade.apihubs.in/mitrawave/` and **WSS** at `wss://trade.apihubs.in/mitrawave/v2/live`, using Apache TLS reverse proxy. Public integration tests have passed signed identity registration/reconnect, deletion and session revocation, ephemeral key lookup, temporary ciphertext delivery, acknowledgement and authenticated WebSocket upgrade. The Android app includes an experimental client for this endpoint. **Real-device E2EE interoperability, an audited ratchet and long-term message storage remain incomplete.**
-
-[View verified public transport integration test](https://github.com/rajniwebdeveloper/MitraWave/actions/runs/40192281719) (requires private repo access).
-
-## Android experimental encrypted chat (v0.6.0-dev)
-
-Android now has a prototype **HTTPS + WSS** client, local P-256 signing-key registration/reconnect without passwords, short-lived public-key directory, encrypted 1:1 message sending, decryption and inbox acknowledgement. Message encryption uses ephemeral P-256 ECDH, HKDF-SHA256, AES-256-GCM and ECDSA signatures. Contact identity keys are pinned on first use (**TOFU, not independently verified**).
-
-**Security limits:** This is not a reviewed Signal/Double Ratchet. It lacks post-compromise security, persistent chat history, strong first-contact verification and completed real-device testing. Messages displayed in the app are held in memory only and disappear when the app is closed. The `.mwbackup` restores a signing identity and note, **not chat history**. This APK is for developer testing only.
+- HTTPS status: [`https://trade.apihubs.in/mitrawave/healthz`](https://trade.apihubs.in/mitrawave/healthz)
+- WebSocket: `wss://trade.apihubs.in/mitrawave/v2/live`
+- Internal TCP: `127.0.0.1:18482`, with HTTPS termination by aaPanel Apache.
+- Private Docker network: persistent PostgreSQL identity storage and memory-only Redis queue. Neither MitraWave database container publishes a host port.
+- Verified live integration: signed account registration/reconnect, PostgreSQL username prefix search, key lookup, temporary relay/acknowledgement, authenticated WSS upgrade, signed account deletion and key removal. PostgreSQL identity persistence was separately tested across a Redis restart.
 
 ## Features
 
-MitraWave's product design covers the following experiences. **Feature descriptions do not mean they are implemented in the current downloadable previews.**
+MitraWave's intended product includes device-owned identities, encrypted 1:1 chat, username search, trusted key verification, optional encrypted nearby Bluetooth/Wi-Fi messaging, group chats, private calls and opt-in multi-hop relay. **Many of these are not implemented yet.** The Android encryption is experimental (P-256 ECDH, HKDF-SHA256, AES-GCM, ECDSA and first-use key pinning); it lacks an audited ratchet, durable encrypted conversations, robust identity verification and multi-device support.
 
-| Experience | Features |
-| --- | --- |
-| **Device-owned identity** | Private signing key generated locally; no server account database/password/OTP; usernames reserved temporarily in Redis |
-| **Friends & verification** | Username search, requests and approvals, QR invitations, encryption identity verification |
-| **Private conversations** | End-to-end encrypted private chats, local encrypted history, reactions, replies, receipts |
-| **Internet chat** | Real-time message delivery, typing indicators, encrypted offline queues |
-| **Offline nearby** | Bluetooth discovery and Wi-Fi capable device-to-device transfers with user permissions |
-| **Mesh relay** | Optional encrypted store-and-forward through consenting nearby devices, with expiry and hop limits |
-| **Media** | Photos, videos, documents, stickers, voice notes and emojis |
-| **Voice & video** | Private calls with device-oriented security |
-| **Groups & channels** | Communities, member permissions, topics, polls and moderation |
-| **Privacy & settings** | App lock, expiring chats, key verification, light/dark themes |
-| **Platforms** | Android, iOS, Web, Windows, Linux and macOS, within platform-specific offline limitations |
+## Installation and privacy
 
-### How the mesh design works
+Android APKs are developer/debug-signed. **Before uninstalling an older APK**, export an encrypted identity backup and save the password; different CI signing keys may prevent in-place upgrades. Uninstalling deletes local app data, and the identity backup cannot recover messages.
 
-**Alex → Alexa → Sam:** Alex addresses a cryptographically encrypted message to Sam. Alexa may voluntarily store and forward a ciphertext envelope while Sam has no internet connection. When Alexa and Sam are within range of a supported Bluetooth/Wi-Fi transport, the message could be forwarded without Alexa reading it. This is the proposed design; **it does not run in the preview downloads**.
+This repository contains **only `README.md`**. The APK and other compiled files are GitHub Release assets; the implementation source remains in a separate **private repository**. Real-device testing, external account-deletion web flow, privacy policy, Data Safety declarations, security review and a properly signed production build remain to be completed before a Play Store production launch.
 
-## Installation notes
-
-**Android:** Download the latest **v0.6.0-dev** APK and install using the system package installer. Sign in or create a disposable test account in Chats. This is a debug-signed **developer preview, not a production secure messenger**; do not send sensitive messages. **Update warning:** preview APK signatures can differ between GitHub Actions builds; if Android refuses an in-place upgrade, export your password-protected `.mwbackup` first, then uninstall the old preview and install the new APK. Uninstalling erases the app's local data; `.mwbackup` restores only the signing identity and saved note, **not chat history**.
-
-**Windows:** Extract the ZIP, then open `MitraWave-Desktop-Preview.exe`. It launches a UI preview in your default browser.
-
-**Linux:** Extract the `.tar.gz`, then run `chmod +x MitraWave-Desktop-Preview && ./MitraWave-Desktop-Preview`. The ISO is a **nonbootable data container** for the Linux x86-64 preview, not an OS distribution.
-
-**macOS:** Extract the ARM64 archive and run the preview launcher. This binary is unsigned and may be blocked by macOS Gatekeeper.
-
-**Web:** Extract and serve the static `index.html` and `mitrawave.js` files. **iOS:** The Simulator archive is for developer testing on a Mac with Xcode; a signed iPhone IPA is not yet available.
-
-## Repository policy
-
-This public repository contains **only `README.md`**. Downloadable builds are distributed as **GitHub Release assets**, and the implementation source remains in a **separate private repository**. Backend server binaries and credentials are not included in these public downloads.
-
-## Feedback
-
-Submit issues via the [GitHub Issues tab](https://github.com/rajniwebdeveloper/MitraWave-Public/issues). Do not post passwords, personal conversations or encryption secrets.
+Please report issues via [GitHub Issues](https://github.com/rajniwebdeveloper/MitraWave-Public/issues) without sharing passwords, message contents or private keys.
