@@ -71,7 +71,7 @@ MitraWave's product design covers the following experiences. **Feature descripti
 
 ## Installation notes
 
-**Android:** Download the latest **v0.5.0-dev** APK and install using the system package installer. Sign in or create a disposable test account in Chats. This is a debug-signed **developer preview, not a production secure messenger**; please do not send sensitive messages.
+**Android:** Download the latest **v0.5.0-dev** APK and install using the system package installer. Sign in or create a disposable test account in Chats. This is a debug-signed **developer preview, not a production secure messenger**; do not send sensitive messages. **Update warning:** preview APK signatures can differ between GitHub Actions builds; if Android refuses an in-place upgrade, export your password-protected `.mwbackup` first, then uninstall the old preview and install the new APK. Uninstalling erases the app's local data; `.mwbackup` restores only the signing identity and saved note, **not chat history**.
 
 **Windows:** Extract the ZIP, then open `MitraWave-Desktop-Preview.exe`. It launches a UI preview in your default browser.
 
