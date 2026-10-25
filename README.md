@@ -2,66 +2,67 @@
 
 ### Stay Connected, Even Offline.
 
-**MitraWave** is a privacy-first messenger designed to bring together online chat, trusted nearby connections, and encrypted mesh delivery in one experience.
+**MitraWave** is a privacy-first messaging product being developed for Android, iOS, Web, Windows, Linux and macOS, with online chat and proximity-based encrypted mesh delivery as its intended capabilities.
 
-[**Download Android APK**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.1.0-dev) · [**All Releases**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases)
+[**Download multi-platform previews**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.2.0-preview) · [**All releases**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases)
 
-> **Available download:** v0.1.0-dev is an **Android UI preview**, not a functioning messenger. It lets you explore the Chats, Nearby, Calls, Groups and Settings screens. Authentication, actual message delivery, encryption, and nearby transfers **do not yet work** in this APK. Please do not use it for sensitive communication.
+> **Important:** The currently available downloads are **UI previews, not functional encrypted messaging clients**. Real sign-in in the apps, end-to-end encrypted messages, voice/video calls, Bluetooth mesh forwarding and live chat are not operational in these preview packages. Do not use the previews for sensitive communication.
+
+## Downloads — v0.2.0-preview
+
+| Platform | Public download | What it contains |
+| --- | --- | --- |
+| **Android (7.0+)** | [Download APK](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Android-v0.1.0-dev.apk) | Android UI preview, min API 24, target API 36 |
+| **Windows x64** | [Download Windows ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Windows-Desktop-Preview-amd64.zip) | `.exe` desktop UI preview launcher |
+| **Linux x86-64** | [Download Linux tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-amd64.tar.gz) | Linux desktop UI preview executable |
+| **Linux ARM64** | [Download ARM64 tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-arm64.tar.gz) | ARM64 desktop UI preview executable |
+| **Linux ISO** | [Download ISO](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Linux-Desktop-Preview-DATA-ONLY.iso) | **Data ISO only; NOT bootable, NOT a Linux OS or installer** |
+| **macOS Apple Silicon** | [Download macOS tar.gz](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-macOS-Desktop-Preview-arm64.tar.gz) | Unsigned local desktop UI preview launcher |
+| **Web** | [Download Web ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-Web-UI-Preview.zip) | Static HTML + compiled Kotlin/JS browser preview |
+| **iOS Simulator** | [Download Simulator ZIP](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/MitraWave-iOS-Simulator-UI-Preview.zip) | Unsigned **simulator-only** application, not an iPhone IPA |
+
+[**SHA-256 checksums for all downloads**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.2.0-preview/SHA256SUMS.txt)
+
+The Windows, Linux and macOS desktop downloads run a local-only user interface in the default browser. They are *not* connected to the private Go backend. The Android package's internal version remains `0.1.0-dev`, even though this combined download collection is labeled `v0.2.0-preview`.
 
 ## Features
 
-MitraWave's feature set is designed around privacy and connectivity. **This section describes the product's feature design, not functionality available in the current preview APK.**
+MitraWave's product design covers the following experiences. **Feature descriptions do not mean they are implemented in the current downloadable previews.**
 
 | Experience | Features |
 | --- | --- |
-| **Secure accounts** | Unique @username or email + password; no phone number or OTP required; device management |
-| **Friends & identity** | Username search, friend requests, QR invitations, security-key QR verification, blocking |
-| **Private conversations** | End-to-end encrypted individual chats, encrypted local chat history, replies, reactions and read receipts |
-| **Online messaging** | Real-time chat, delivery acknowledgements, typing indicators, encrypted offline delivery queue |
-| **Nearby offline chat** | Bluetooth discovery and direct Wi-Fi-capable nearby transfer without internet, subject to phone permissions and platform limits |
-| **Smart mesh relay** | Optional encrypted store-and-forward via consenting nearby devices, with expiry and bounded hop counts |
-| **Media sharing** | Photos, videos, documents, voice messages, stickers and emoji |
-| **Calls** | Private voice and video conversations |
-| **Communities** | Groups, channels, admin controls, topics and polls |
-| **Privacy & personalization** | App lock, disappearing messages, device verification, light/dark themes and chat settings |
-| **Cross-platform** | Android, iOS and Web product architecture; some offline features are mobile-only |
+| **Secure accounts** | Unique @username or email + password; no mandatory phone number or OTP; device session management |
+| **Friends & verification** | Username search, requests and approvals, QR invitations, encryption identity verification |
+| **Private conversations** | End-to-end encrypted private chats, local encrypted history, reactions, replies, receipts |
+| **Internet chat** | Real-time message delivery, typing indicators, encrypted offline queues |
+| **Offline nearby** | Bluetooth discovery and Wi-Fi capable device-to-device transfers with user permissions |
+| **Mesh relay** | Optional encrypted store-and-forward through consenting nearby devices, with expiry and hop limits |
+| **Media** | Photos, videos, documents, stickers, voice notes and emojis |
+| **Voice & video** | Private calls with device-oriented security |
+| **Groups & channels** | Communities, member permissions, topics, polls and moderation |
+| **Privacy & settings** | App lock, expiring chats, key verification, light/dark themes |
+| **Platforms** | Android, iOS, Web, Windows, Linux and macOS, within platform-specific offline limitations |
 
-### How encrypted mesh delivery is designed
+### How the mesh design works
 
-**Alex → Alexa → Sam:** Alex sends a message addressed to Sam. If Sam is offline, an eligible, consenting relay such as Alexa can temporarily carry an encrypted envelope. When Alexa and Sam come within supported Bluetooth/Wi-Fi range, Sam may receive and decrypt it on his own device. Relay users are not supposed to see message contents. Delivery depends on device connectivity, permissions and operating-system limitations.
+**Alex → Alexa → Sam:** Alex addresses a cryptographically encrypted message to Sam. Alexa may voluntarily store and forward a ciphertext envelope while Sam has no internet connection. When Alexa and Sam are within range of a supported Bluetooth/Wi-Fi transport, the message could be forwarded without Alexa reading it. This is the proposed design; **it does not run in the preview downloads**.
 
-## Current Android Preview
+## Installation notes
 
-The downloadable **v0.1.0-dev** APK includes:
+**Android:** Download the APK and install using the system package installer. This is a development/debug-signed preview, not an official app-store release.
 
-- Chats list, sample conversations and search/filter UI
-- Nearby screen with relay setting preview
-- Calls, Groups and Settings navigation screens
-- System light/dark theme support
-- Kotlin-based Android app prototype
+**Windows:** Extract the ZIP, then open `MitraWave-Desktop-Preview.exe`. It launches a UI preview in your default browser.
 
-**Preview screens and toggles are demonstrations only. There is no functioning backend, secure messaging, or mesh transport in this release.**
+**Linux:** Extract the `.tar.gz`, then run `chmod +x MitraWave-Desktop-Preview && ./MitraWave-Desktop-Preview`. The ISO is a **nonbootable data container** for the Linux x86-64 preview, not an OS distribution.
 
-## Download & Compatibility
+**macOS:** Extract the ARM64 archive and run the preview launcher. This binary is unsigned and may be blocked by macOS Gatekeeper.
 
-| Item | Value |
-| --- | --- |
-| App | MitraWave |
-| Release | v0.1.0-dev — Android debug UI preview |
-| Package | `com.mitrawave.app` |
-| Minimum Android | 7.0 (API 24) |
-| Target Android | 16 (API 36) |
-| APK file size | Approximately 17.7 MiB |
-| SHA-256 | `71116ca84d407db740ba766adafdfe3ab8a4582d90972865a37d4f4dc7dcc755` |
+**Web:** Extract and serve the static `index.html` and `mitrawave.js` files. **iOS:** The Simulator archive is for developer testing on a Mac with Xcode; a signed iPhone IPA is not yet available.
 
-**[Download MitraWave Android APK](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.1.0-dev/MitraWave-Android-v0.1.0-dev.apk)**
+## Repository policy
 
-Download from GitHub Releases, verify the checksum if desired, and install through Android's standard package installer. This build is for UI testing.
-
-## Repository & Releases
-
-This **public repository contains only `README.md`**. Android binaries are provided **exclusively as GitHub Release assets**; implementation source remains in a separate private repository and is not published here.
+This public repository contains **only `README.md`**. Downloadable builds are distributed as **GitHub Release assets**, and the implementation source remains in a **separate private repository**. Backend server binaries and credentials are not included in these public downloads.
 
 ## Feedback
 
-You can share suggestions and bug reports through the repository's **Issues** tab. Never include passwords, private encryption keys, or personal chat content in public reports.
+Submit issues via the [GitHub Issues tab](https://github.com/rajniwebdeveloper/MitraWave-Public/issues). Do not post passwords, personal conversations or encryption secrets.
