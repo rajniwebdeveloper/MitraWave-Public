@@ -1,55 +1,67 @@
 # MitraWave
 
-**MitraWave — Stay Connected, Even Offline.**
+### Stay Connected, Even Offline.
 
-Welcome to the **public APK downloads repository** for MitraWave.
+**MitraWave** is a privacy-first messenger designed to bring together online chat, trusted nearby connections, and encrypted mesh delivery in one experience.
 
-> **Current status: Android UI preview only (v0.1.0-dev).**
-> This build is **not a functional or secure messenger yet**: sign-in, real chat delivery,
-> end-to-end encryption, Bluetooth/Wi-Fi mesh transfer, and relaying are not implemented.
-> Do not use it for sensitive conversations.
+[**Download Android APK**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.1.0-dev) · [**All Releases**](https://github.com/rajniwebdeveloper/MitraWave-Public/releases)
 
-## Download Android APK
+> **Available download:** v0.1.0-dev is an **Android UI preview**, not a functioning messenger. It lets you explore the Chats, Nearby, Calls, Groups and Settings screens. Authentication, actual message delivery, encryption, and nearby transfers **do not yet work** in this APK. Please do not use it for sensitive communication.
 
-Get the APK from [GitHub Releases](https://github.com/rajniwebdeveloper/MitraWave-Public/releases), starting with the [v0.1.0-dev preview release](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/tag/v0.1.0-dev).
+## Features
 
-- **App:** MitraWave
-- **Version:** 0.1.0-dev (Android debug preview)
-- **Package name:** `com.mitrawave.app`
-- **Minimum Android:** Android 7.0 (API 24)
-- **Target Android:** Android 16 (API 36)
-- **APK size:** approximately 17.7 MiB
-- **SHA-256:** `71116ca84d407db740ba766adafdfe3ab8a4582d90972865a37d4f4dc7dcc755`
+MitraWave's feature set is designed around privacy and connectivity. **This section describes the product's feature design, not functionality available in the current preview APK.**
 
-## What's in the current preview?
+| Experience | Features |
+| --- | --- |
+| **Secure accounts** | Unique @username or email + password; no phone number or OTP required; device management |
+| **Friends & identity** | Username search, friend requests, QR invitations, security-key QR verification, blocking |
+| **Private conversations** | End-to-end encrypted individual chats, encrypted local chat history, replies, reactions and read receipts |
+| **Online messaging** | Real-time chat, delivery acknowledgements, typing indicators, encrypted offline delivery queue |
+| **Nearby offline chat** | Bluetooth discovery and direct Wi-Fi-capable nearby transfer without internet, subject to phone permissions and platform limits |
+| **Smart mesh relay** | Optional encrypted store-and-forward via consenting nearby devices, with expiry and bounded hop counts |
+| **Media sharing** | Photos, videos, documents, voice messages, stickers and emoji |
+| **Calls** | Private voice and video conversations |
+| **Communities** | Groups, channels, admin controls, topics and polls |
+| **Privacy & personalization** | App lock, disappearing messages, device verification, light/dark themes and chat settings |
+| **Cross-platform** | Android, iOS and Web product architecture; some offline features are mobile-only |
 
-- Starter Android user interface: Chats, Nearby, Calls, Groups and Settings.
-- Demonstration chat list and sample conversation screen.
-- Sample UI for optional nearby relay settings.
-- Light/dark appearance based on system theme.
+### How encrypted mesh delivery is designed
 
-**These are interface demonstrations, not working online or offline messaging features.**
+**Alex → Alexa → Sam:** Alex sends a message addressed to Sam. If Sam is offline, an eligible, consenting relay such as Alexa can temporarily carry an encrypted envelope. When Alexa and Sam come within supported Bluetooth/Wi-Fi range, Sam may receive and decrypt it on his own device. Relay users are not supposed to see message contents. Delivery depends on device connectivity, permissions and operating-system limitations.
 
-## Planned features
+## Current Android Preview
 
-- Username/email + password authentication, without OTP or mandatory phone number.
-- Friend requests by `@username` and QR invitation / identity verification.
-- Independently reviewed end-to-end encrypted private messaging.
-- Device-local encrypted chat history and short-lived encrypted offline queues.
-- Consent-based nearby Bluetooth / Wi-Fi transport and mesh relaying (subject to OS restrictions).
-- Android, iOS and Web clients, plus groups, channels, and calls.
+The downloadable **v0.1.0-dev** APK includes:
 
-## Repository policy
+- Chats list, sample conversations and search/filter UI
+- Nearby screen with relay setting preview
+- Calls, Groups and Settings navigation screens
+- System light/dark theme support
+- Kotlin-based Android app prototype
 
-**This public repository contains only this README.md.** Built Android APKs are published as downloadable **GitHub Release assets** rather than committed to Git. The implementation source is maintained in a separate **private repository** and is not distributed here.
+**Preview screens and toggles are demonstrations only. There is no functioning backend, secure messaging, or mesh transport in this release.**
 
-## Installation
+## Download & Compatibility
 
-1. Download the `.apk` file from Releases on an Android device.
-2. Check that the release is from this repository and compare its SHA-256 checksum above.
-3. Install it using Android's normal package installer; installation of externally downloaded APKs may require device approval.
-4. This debug preview is for interface testing only.
+| Item | Value |
+| --- | --- |
+| App | MitraWave |
+| Release | v0.1.0-dev — Android debug UI preview |
+| Package | `com.mitrawave.app` |
+| Minimum Android | 7.0 (API 24) |
+| Target Android | 16 (API 36) |
+| APK file size | Approximately 17.7 MiB |
+| SHA-256 | `71116ca84d407db740ba766adafdfe3ab8a4582d90972865a37d4f4dc7dcc755` |
+
+**[Download MitraWave Android APK](https://github.com/rajniwebdeveloper/MitraWave-Public/releases/download/v0.1.0-dev/MitraWave-Android-v0.1.0-dev.apk)**
+
+Download from GitHub Releases, verify the checksum if desired, and install through Android's standard package installer. This build is for UI testing.
+
+## Repository & Releases
+
+This **public repository contains only `README.md`**. Android binaries are provided **exclusively as GitHub Release assets**; implementation source remains in a separate private repository and is not published here.
 
 ## Feedback
 
-Report problems via this repository's **Issues** tab. Do not post passwords, private keys, or personal messages.
+You can share suggestions and bug reports through the repository's **Issues** tab. Never include passwords, private encryption keys, or personal chat content in public reports.
